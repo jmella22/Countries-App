@@ -1,4 +1,3 @@
-const { ParameterDescriptionMessage } = require('pg-protocol/dist/messages');
 const { Activity, Country, Op } = require('../db');
 
 const getAllCountries = async (req, res) => {
