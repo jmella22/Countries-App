@@ -9,7 +9,7 @@ const postActivity = async (req, res) => {
       duration,
       season,
     });
-    await newActivity.addCountries(await Country.findOne(countries));
+    await newActivity.addCountries(await Country.findByPk(countries));
     res.status(200).json(newActivity);
   } catch (error) {
     console.log("error en la funcion postActivity", error);
