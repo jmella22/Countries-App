@@ -1,13 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-export default function LandingPage() {
+const LandingPage = () => {
   return (
-    <>
-      <div>
-        <NavLink to="/home">
-          <h2>site under construction</h2>
-        </NavLink>
-      </div>
-    </>
+    <div>
+      <NavLink to="/home">
+        <h2>ACCESS TO THE APP</h2>
+      </NavLink>
+    </div>
   );
-}
+};
+
+export default LandingPage;
