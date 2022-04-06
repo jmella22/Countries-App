@@ -1,7 +1,18 @@
-import { GET_ALL_COUNTRIES } from "../action";
+import {
+  FILTER_BY_SELECT,
+  GET_ALL_COUNTRIES,
+  GET_BY_NAME,
+  ORDER_BY_NAME,
+  ORDER_BY_POPULATION,
+  SET_ORDER,
+  SET_PAGE,
+} from "../action";
 
 const initialState = {
   countries: [],
+  allcountries: [],
+  order: "",
+  initialPage: 1,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,7 +21,86 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         countries: action.payload,
+        allcountries: action.payload,
       };
+
+    case FILTER_BY_SELECT:
+      const countriesAll = state.allcountries;
+      const countriesFilter =
+        action.payload === "All"
+          ? countriesAll
+          : countriesAll.filter((c) => c.continent === action.payload);
+      return {
+        ...state,
+        countries: countriesFilter,
+      };
+
+    case ORDER_BY_NAME:
+      const sortName =
+        action.payload === "asc"
+          ? state.countries.sort((a, b) => {
+              if (a.name < b.name) {
+                return -1;
+              } else if (a.name > b.name) {
+                return 1;
+              }
+              return 0;
+            })
+          : state.countries.sort((a, b) => {
+              if (a.name < b.name) {
+                return 1;
+              } else if (a.name > b.name) {
+                return -1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        countries: sortName,
+      };
+
+    case ORDER_BY_POPULATION:
+      const sortPopulation =
+        action.payload === "asc"
+          ? state.countries.sort((a, b) => {
+              if (parseInt(a.population) < parseInt(b.population)) {
+                return -1;
+              } else if (parseInt(a.population) > parseInt(b.population)) {
+                return 1;
+              }
+              return 0;
+            })
+          : state.countries.sort((a, b) => {
+              if (parseInt(a.population) < parseInt(b.population)) {
+                return 1;
+              } else if (parseInt(a.population) > parseInt(b.population)) {
+                return -1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        countries: sortPopulation,
+      };
+
+    case SET_ORDER:
+      return {
+        ...state,
+        order: action.payload,
+      };
+
+    case SET_PAGE:
+      return {
+        ...state,
+        initialPage: action.payload,
+      };
+
+    case GET_BY_NAME:
+      return {
+        ...state,
+        countries: action.payload,
+      };
+
     default:
       return {
         ...state,

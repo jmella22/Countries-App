@@ -1,0 +1,21 @@
+.container {
+  display: inline-block;
+  justify-content: center;
+  flex-direction: column;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #3d5467;
+  color: #f1edee;
+  width: 300px;
+  padding: 10px;
+  background-color: rgba(104, 105, 99, 0.8);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.containerImg {
+  width: 100%;
+}
+.img {
+  width: 100%;
+}

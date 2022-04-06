@@ -1,35 +1,40 @@
-const { Activity, Country, Op } = require('../db');
+const { Activity, Country, Op } = require("../db");
 
 const getAllCountries = async (req, res) => {
   try {
     const { name } = req.query;
     if (name) {
       const country = await Country.findAll({
-        attributes: ["id", "name", "flag", "continent", "capital"],
+        attributes: [
+          "id",
+          "name",
+          "flag",
+          "continent",
+          "capital",
+          "population",
+        ],
         through: {
-          attributes: []
+          attributes: [],
         },
         where: {
           name: {
-            [Op.iLike]: `%${name}%`
-          }
-        }
+            [Op.iLike]: `%${name}%`,
+          },
+        },
       });
       if (country.length === 0) {
-        res.status(404).send('not found name');
-      }
-      else {
+        res.status(404).send("not found name");
+      } else {
         res.status(200).json(country);
       }
-    }
-    else {
+    } else {
       const countries = await Country.findAll({
         include: ["activities"],
       });
       res.status(200).json(countries);
     }
   } catch (error) {
-    console.log('error en la funcion getAllCountries', error);
+    console.log("error en la funcion getAllCountries", error);
   }
 };
 
@@ -40,28 +45,21 @@ const getCountryById = async (req, res) => {
       attributes: ["id", "name", "flag", "continent", "capital"],
       include: Activity,
       through: {
-        attributes: []
+        attributes: [],
       },
       where: {
         id: {
-          [Op.iLike]: `%${id}%`
-        }
-      }
+          [Op.iLike]: `%${id}%`,
+        },
+      },
     });
     res.status(200).json(countryId);
   } catch (error) {
-    console.log('error en la funcion getCountryById', error);
+    console.log("error en la funcion getCountryById", error);
   }
 };
-
-
-
-
-
-
 
 module.exports = {
   getAllCountries,
   getCountryById,
-
-}
+};

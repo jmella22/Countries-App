@@ -1,20 +1,24 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const Card = ({ name, flag, id, countinent }) => {
-  <div>
-    <div>
-      <img src={flag} alt="bandera del pais" />
-    </div>
-    <div>
-      <h2>{name}</h2>
-    </div>
-    <div>
-      <h3>{countinent}</h3>
-    </div>
-    <div>
-      <button to={`/detail/${id}`}>more info</button>
-    </div>
-  </div>;
-};
+import S from "./Styles/card.module.css";
 
-export default Card;
+export default function Card({ name, flag, id, continent }) {
+  return (
+    <div className={S.container}>
+      <div className={S.containerIng}>
+        <NavLink to={`/detail/${id}`}>
+          <img className={S.img} src={flag} alt="bandera del pais" />
+        </NavLink>
+      </div>
+      <div>
+        <h2>{name}</h2>
+      </div>
+      <div>
+        <h3>{continent}</h3>
+      </div>
+    </div>
+  );
+}
+
+//export default Card;
