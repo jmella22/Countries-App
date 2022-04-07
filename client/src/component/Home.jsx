@@ -12,6 +12,7 @@ import OrderByName from "./OrderByName";
 import OrderByPopulation from "./OrderByPopulation";
 
 import Paginated from "./Paginated";
+import SearchBar from "./SearchBar";
 import S from "./Styles/Home.module.css";
 
 export default function Home() {
@@ -63,6 +64,7 @@ export default function Home() {
         <div>
           {/* <OrderByPopulation /> */}
           <select onChange={handleOrderPopulation}>
+            <option value="rnd">All countries</option>
             <option value="asc">Asendente</option>
             <option value="desc">Desendente</option>
           </select>
@@ -70,12 +72,16 @@ export default function Home() {
         <div>
           {/* <OrderByName /> */}
           <select onChange={handleOrderName}>
+            <option value="rnd">All countries</option>
             <option value="asc">A - Z</option>
             <option value="desc">Z - A</option>
           </select>
         </div>
         <div>
           <Filter setpage={setPage} />
+        </div>
+        <div>
+          <SearchBar />
         </div>
       </div>
       <div className={S.container}>

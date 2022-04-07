@@ -13,6 +13,7 @@ const getAllCountries = async (req, res) => {
           "capital",
           "population",
         ],
+        include: Activity,
         through: {
           attributes: [],
         },

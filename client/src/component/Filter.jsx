@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterByContinent, setPage } from "../redux/action";
+import { filterByContinent } from "../redux/action";
 
-const Filter = () => {
+const Filter = ({ setPage }) => {
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
