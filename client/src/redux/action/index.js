@@ -2,8 +2,6 @@ export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
 export const FILTER_BY_SELECT = "FILTER_BY_SELECT";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_POPULATION = "ORDER_BY_POPULATION";
-export const SET_PAGE = "SET_PAGE"; // esta no la estoy ocupando
-export const SET_ORDER = "SET_ORDER"; // esta no la estoy ocupando
 export const GET_BY_NAME = "GET_BY_NAME";
 export const GET_NAME_BY_ID = "GET_NAME_BY_ID";
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
@@ -51,16 +49,18 @@ export const getByName = (name) => (dispatch) => {
     });
 };
 
-export const setPage = (payload) => {
-  return {
-    type: SET_PAGE,
-    payload,
-  };
+export const getNameById = (id) => (dispatch) => {
+  return fetch(`http://localhost:3001/countries/${id}`)
+    .then((r) => r.json())
+    .then((j) => {
+      dispatch({ type: GET_NAME_BY_ID, payload: j });
+    });
 };
 
-export const setOrder = (payload) => {
-  return {
-    type: SET_ORDER,
-    payload,
-  };
-};
+// export function getNameById(id) {
+//   (dispatch) => {
+//     return axios.get(`http://localhost:3001/countries/${id}`).then((d) => {
+//       dispatch({ type: GET_NAME_BY_ID, payload: j });
+//     });
+//   };
+// }

@@ -8,7 +8,7 @@ export default function Card({ name, flag, id, continent }) {
     <div className={S.container}>
       <div className={S.containerIng}>
         <NavLink to={`/detail/${id}`}>
-          <img className={S.img} src={flag} alt="bandera del pais" />
+          <img className={S.img} src={flag} alt={`Bandera de ${S.name}`} />
         </NavLink>
       </div>
       <div>

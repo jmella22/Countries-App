@@ -43,7 +43,16 @@ const getCountryById = async (req, res) => {
   try {
     const { id } = req.params;
     const countryId = await Country.findOne({
-      attributes: ["id", "name", "flag", "continent", "capital"],
+      attributes: [
+        "id",
+        "name",
+        "flag",
+        "continent",
+        "capital",
+        "subregion",
+        "area",
+        "population",
+      ],
       include: Activity,
       through: {
         attributes: [],

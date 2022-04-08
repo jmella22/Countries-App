@@ -2,17 +2,15 @@ import {
   FILTER_BY_SELECT,
   GET_ALL_COUNTRIES,
   GET_BY_NAME,
+  GET_NAME_BY_ID,
   ORDER_BY_NAME,
   ORDER_BY_POPULATION,
-  SET_ORDER,
-  SET_PAGE,
 } from "../action";
 
 const initialState = {
   countries: [],
   allcountries: [],
-  order: "",
-  initialPage: 1,
+  detailCountry: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -87,22 +85,16 @@ const rootReducer = (state = initialState, action) => {
         countries: sortPopulation,
       };
 
-    case SET_ORDER:
-      return {
-        ...state,
-        order: action.payload,
-      };
-
-    case SET_PAGE:
-      return {
-        ...state,
-        initialPage: action.payload,
-      };
-
     case GET_BY_NAME:
       return {
         ...state,
         countries: action.payload,
+      };
+
+    case GET_NAME_BY_ID:
+      return {
+        ...state,
+        detailCountry: action.payload,
       };
 
     default:
