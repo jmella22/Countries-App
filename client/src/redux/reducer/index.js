@@ -3,13 +3,16 @@ import {
   GET_ALL_COUNTRIES,
   GET_BY_NAME,
   GET_NAME_BY_ID,
+  GET_NAME_USER,
   ORDER_BY_NAME,
   ORDER_BY_POPULATION,
+  POST_ACTIVITY,
 } from "../action";
 
 const initialState = {
+  nameUser: " ",
   countries: [],
-  allcountries: [],
+  allCountries: [],
   detailCountry: {},
 };
 
@@ -36,7 +39,7 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_BY_NAME:
       const sortName =
         action.payload === "rnd"
-          ? state.allcountries
+          ? state.allCountries
           : action.payload === "asc"
           ? state.countries.sort((a, b) => {
               if (a.name < b.name) {
@@ -62,7 +65,7 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_BY_POPULATION:
       const sortPopulation =
         action.payload === "rnd"
-          ? state.allcountries
+          ? state.Cllcountries
           : action.payload === "asc"
           ? state.countries.sort((a, b) => {
               if (parseInt(a.population) < parseInt(b.population)) {
@@ -95,6 +98,17 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         detailCountry: action.payload,
+      };
+
+    case GET_NAME_USER:
+      return {
+        ...state,
+        nameUser: action.payload,
+      };
+
+    case POST_ACTIVITY:
+      return {
+        ...state,
       };
 
     default:

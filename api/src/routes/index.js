@@ -1,5 +1,8 @@
 const { Router } = require("express");
-const { postActivity } = require("../controllers/activityController");
+const {
+  postActivity,
+  getAllActivity,
+} = require("../controllers/activityController");
 const {
   getAllCountries,
   getCountryById,
@@ -14,5 +17,6 @@ const router = Router();
 router.get("/countries", getAllCountries);
 router.get("/countries/:id", getCountryById);
 router.post("/activity", postActivity);
+router.get("/activity", getAllActivity);
 
 module.exports = router;

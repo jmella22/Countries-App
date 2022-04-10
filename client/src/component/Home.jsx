@@ -8,13 +8,13 @@ import {
   orderByPopulation,
 } from "../redux/action";
 import Card from "./Card";
-
+import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import S from "./Styles/Home.module.css";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.countries);
+  const { countries, nameUser } = useSelector((state) => state);
   const [order, setOrder] = useState("");
   const [input, setInput] = useState(1);
   const [page, setPage] = useState(1);
@@ -23,7 +23,7 @@ export default function Home() {
   const indexOfStart = (page - 1) * perPage;
   const indexOfEnd = (page - 1) * perPage + perPage;
   const currentCountries = countries.slice(indexOfStart, indexOfEnd);
-  console.log(currentCountries);
+  //console.log(currentCountries);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -87,11 +87,17 @@ export default function Home() {
   };
 
   useEffect(() => {
-    dispatch(getAllCountries());
-  }, [dispatch]);
+    dispatch(getAllCountries()); // hacer un punto then para pantalla de carga un estado local el false o true
+  }, [dispatch]); // setear una action para lipiar el detalle
 
   return (
     <div>
+      <div>
+        <Navbar />
+      </div>
+      <div>
+        <h2>{`Bienvendio ${nameUser}`}</h2>
+      </div>
       <div>
         <button
           onClick={(e) => {
@@ -101,7 +107,6 @@ export default function Home() {
           Reset
         </button>
         <div>
-          {/* <OrderByPopulation /> */}
           <select onChange={handleOrderPopulation}>
             <option value="rnd">All countries</option>
             <option value="asc">Asendente</option>
@@ -109,7 +114,6 @@ export default function Home() {
           </select>
         </div>
         <div>
-          {/* <OrderByName /> */}
           <select onChange={handleOrderName}>
             <option value="rnd">All countries</option>
             <option value="asc">A - Z</option>
@@ -117,7 +121,6 @@ export default function Home() {
           </select>
         </div>
         <div>
-          {/* <Filter/> */}
           <select onChange={handleSelect}>
             <option value={"All"}>all</option>
             <option value={"Africa"}>Africa</option>
@@ -151,7 +154,6 @@ export default function Home() {
         )}
       </div>
       <div>
-        {/* <Paginated page={page} setPage={setPage} maxNumPages={maxNumPages} /> */}
         <button onClick={prevPage}>-</button>
         <input
           onChange={(e) => onChange(e)}
