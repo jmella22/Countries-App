@@ -1,4 +1,10 @@
-.container {
+.bg {
+  background: rgb(1, 16, 19);
+  width: 100vw;
+  height: 100%;
+}
+
+.containerCard {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;

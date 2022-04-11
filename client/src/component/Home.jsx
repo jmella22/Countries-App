@@ -14,7 +14,7 @@ import S from "./Styles/Home.module.css";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { countries, nameUser } = useSelector((state) => state);
+  const { countries } = useSelector((state) => state);
   const [order, setOrder] = useState("");
   const [input, setInput] = useState(1);
   const [page, setPage] = useState(1);
@@ -91,12 +91,9 @@ export default function Home() {
   }, [dispatch]); // setear una action para lipiar el detalle
 
   return (
-    <div>
+    <div className={S.bg}>
       <div>
         <Navbar />
-      </div>
-      <div>
-        <h2>{`Bienvendio ${nameUser}`}</h2>
       </div>
       <div>
         <button
@@ -136,7 +133,7 @@ export default function Home() {
           <SearchBar />
         </div>
       </div>
-      <div className={S.container}>
+      <div className={S.containerCard}>
         {currentCountries.length > 0 ? (
           currentCountries?.map((c) => {
             return (

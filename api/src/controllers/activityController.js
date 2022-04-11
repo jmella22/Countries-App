@@ -8,9 +8,7 @@ const postActivity = async (req, res) => {
     //hacer map de countries---> agegar a arreglo de paises (arreglo de objetos) --> agregar a addCountries el arreglo de paises
     const foundCountries = await Country.findAll({
       where: {
-        name: {
-          [Op.iLike]: `${countries}`,
-        },
+        name: countries,
       },
     });
 

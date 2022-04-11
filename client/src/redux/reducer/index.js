@@ -10,6 +10,7 @@ import {
 } from "../action";
 
 const initialState = {
+  user: {},
   nameUser: " ",
   countries: [],
   allCountries: [],
@@ -103,7 +104,8 @@ const rootReducer = (state = initialState, action) => {
     case GET_NAME_USER:
       return {
         ...state,
-        nameUser: action.payload,
+        //nameUser: action.payload,
+        user: action.payload,
       };
 
     case POST_ACTIVITY:

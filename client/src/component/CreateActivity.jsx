@@ -19,7 +19,7 @@ const CreateActivity = () => {
   const handleChange = (e) => {
     setInput({
       ...input,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value.toString(),
     });
   };
 
