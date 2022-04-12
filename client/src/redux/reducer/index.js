@@ -7,6 +7,7 @@ import {
   ORDER_BY_NAME,
   ORDER_BY_POPULATION,
   POST_ACTIVITY,
+  RESET_DETAIL,
 } from "../action";
 
 const initialState = {
@@ -111,6 +112,11 @@ const rootReducer = (state = initialState, action) => {
     case POST_ACTIVITY:
       return {
         ...state,
+      };
+    case RESET_DETAIL:
+      return {
+        ...state,
+        detailCountry: action.payload,
       };
 
     default:

@@ -50,6 +50,7 @@ const LandingPage = () => {
                   type="text"
                   placeholder="Name"
                   onChange={(e) => handleInputChange(e)}
+                  required
                 />
               </div>
               <div className={S.loginInput}>
@@ -59,6 +60,7 @@ const LandingPage = () => {
                   type="password"
                   placeholder="Password"
                   onChange={(e) => handlePassChange(e)}
+                  required
                 />
               </div>
               <div className={S.contbtn}>

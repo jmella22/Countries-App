@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: auto;
+  height: auto;
+  margin: 30px;
+  border: none;
+}
+
+.txt {
+  font-size: 60px;
+  color: #f4faff;
+}

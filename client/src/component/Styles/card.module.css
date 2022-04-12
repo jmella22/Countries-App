@@ -10,6 +10,7 @@
   min-width: 250px;
   padding: 12px;
   background-color: rgba(129, 127, 117, 0.3);
+  border: 3px solid rgba(129, 127, 117, 0.3);
   border-radius: 15px;
   margin: 20px;
   box-sizing: border-box;

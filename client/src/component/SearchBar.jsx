@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getByName } from "../redux/action";
+import S from "./Styles/Searchbar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ page, setPage, input, setInput }) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
@@ -14,19 +15,22 @@ const SearchBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getByName(name));
+    setPage(1);
+    setInput(1);
     setName("");
   };
 
   return (
     <div>
       <input
+        className={S.inputSerach}
         value={name}
         type="text"
-        placeholder="Search..."
+        placeholder="Search to country"
         onChange={(e) => handleInputChange(e)}
       />
-      <button type="submit" onClick={(e) => handleSubmit(e)}>
-        Enviar
+      <button className={S.btnN} type="submit" onClick={(e) => handleSubmit(e)}>
+        Search
       </button>
     </div>
   );

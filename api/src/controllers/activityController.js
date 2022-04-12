@@ -2,6 +2,7 @@ const { Activity, Country, Op } = require("../db");
 
 const postActivity = async (req, res) => {
   try {
+    console.log(req.body);
     const { name, difficulty, duration, season, countries } = req.body;
 
     // aqui crear arreglo de paises

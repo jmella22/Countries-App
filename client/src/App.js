@@ -5,6 +5,7 @@ import LandingPage from "./component/LandingPage";
 import Home from "./component/Home";
 import Detail from "./component/Detail";
 import CreateActivity from "./component/CreateActivity";
+import Page404 from "./component/Page404";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="Home" element={<Home />} />
         <Route path="Detail/:id" element={<Detail />} />
         <Route path="Activity/Create" element={<CreateActivity />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </>
   );

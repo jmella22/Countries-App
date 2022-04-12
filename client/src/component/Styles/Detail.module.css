@@ -1,0 +1,79 @@
+.container {
+  background: #071013;
+  min-height: 100vh;
+  height: 100%;
+  box-sizing: content-box;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; */
+}
+.contTitle {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.title {
+  color: #f4faff;
+  font-size: 40px;
+}
+.contInfo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.contImg {
+  width: 40%;
+  display: inline-flex;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+.img {
+  width: 100%;
+}
+
+.info {
+  background-color: rgba(129, 127, 117, 0.3);
+  border: 3px solid #588b8b;
+  border-radius: 15px;
+  padding: 10px;
+  width: 45%;
+  /* padding: 20px; */
+}
+.data {
+  color: #f4faff;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.contActi {
+  width: auto;
+}
+.contCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.actiCard {
+  background-color: rgba(129, 127, 117, 0.3);
+  border: 3px solid #588b8b;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.acti {
+  color: #f4faff;
+  font-size: 28px;
+  margin: 10px;
+}

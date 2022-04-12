@@ -9,6 +9,7 @@ export const GET_NAME_BY_ID = "GET_NAME_BY_ID";
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
 export const GET_NAME_USER = "GET_NAME_USER";
 export const POST_ACTIVITY = "POST_ACTIVITY";
+export const RESET_DETAIL = "RESET_DETAIL";
 
 export const getAllCountries = () => (dispatch) => {
   return fetch("http://localhost:3001/countries")
@@ -65,6 +66,13 @@ export const getNameUser = (user) => {
   return {
     type: GET_NAME_USER,
     payload: user,
+  };
+};
+
+export const resetDetail = () => {
+  return {
+    type: RESET_DETAIL,
+    payload: {},
   };
 };
 

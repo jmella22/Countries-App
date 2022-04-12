@@ -18,9 +18,24 @@
   height: 40px;
 }
 
+.btnDr {
+  height: 40px;
+  font-size: 16px;
+  color: #f4faff;
+  border-radius: 10px;
+  border: 1px solid #588b8b;
+  padding: 5px;
+  background: none;
+  cursor: pointer;
+}
+.btnDr:hover {
+  background: #588b8b;
+}
+
 .btnLo {
   height: 40px;
   font-size: 16px;
+  color: #f4faff;
   border-radius: 10px;
   border: 1px solid rgb(194, 1, 20);
   padding: 5px;
@@ -30,4 +45,10 @@
 
 .btnLo:hover {
   background: rgb(194, 1, 20);
+}
+
+.user {
+  color: #f4faff;
+  font-size: 32px;
+  align-items: center;
 }
