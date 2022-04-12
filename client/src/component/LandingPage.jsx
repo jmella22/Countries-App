@@ -33,9 +33,9 @@ const LandingPage = () => {
     <div className={S.container}>
       <div>
         <nav>
-          <Link to={"#"}>About</Link>
-          <Link to={"#"}>Link de algo</Link>
-          <Link to={"#"}>Link de algo</Link>
+          <Link to={"/About"}>
+            <button className={S.btnA}>About</button>
+          </Link>
         </nav>
       </div>
       <div className={S.contlogin}>

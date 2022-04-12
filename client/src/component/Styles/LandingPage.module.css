@@ -91,3 +91,18 @@
 .btn:hover {
   background-color: rgb(88, 139, 139);
 }
+
+.btnA {
+  width: 80px;
+  height: 30px;
+  font-size: 16px;
+  color: rgb(244, 250, 255);
+  background: none;
+  border: 1px solid rgb(88, 139, 139);
+  margin: 10px;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+.btnA:hover {
+  background-color: rgb(88, 139, 139);
+}

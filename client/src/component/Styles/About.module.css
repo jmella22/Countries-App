@@ -1,0 +1,53 @@
+.container {
+  background-image: url(../img/002-LandingPage-BG.png);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contT {
+  background: none;
+  border-bottom: 3px solid rgb(88, 139, 139);
+  margin: 20px;
+}
+.T {
+  font-size: 40px;
+  margin: 20px;
+  color: #f4faff;
+}
+.card {
+  align-items: center;
+  width: auto;
+  padding: 25px;
+  max-width: 750px;
+  background-color: rgba(7, 16, 19, 0.5);
+  border: 3px solid rgb(88, 139, 139);
+  border-radius: 15px;
+  margin: 20px;
+}
+.txt {
+  color: #f4faff;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+}
+.btnR {
+  width: 160px;
+  height: 60px;
+  font-size: 32px;
+  color: rgb(244, 250, 255);
+  background: none;
+  border: 3px solid rgb(88, 139, 139);
+  margin: 10px;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+.btnR:hover {
+  background-color: rgb(88, 139, 139);
+}

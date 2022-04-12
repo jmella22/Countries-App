@@ -24,25 +24,25 @@ const CreateActivity = () => {
     let errors = {};
     let regexName = /^[A-Za-z\s]+$/i;
     if (!input.name.trim()) {
-      errors.name = "Se Requiere un Nombre";
+      errors.name = "A name is required";
     }
     if (!regexName.test(input.name.trim())) {
       errors.name = "The name field only accepts letters";
     }
     if (!input.difficulty) {
-      errors.difficulty = "Se requiere una dificultad";
+      errors.difficulty = "Difficulty Required";
     }
     if (!input.duration.trim()) {
-      errors.duration = "Se requiere una duración";
-    }
-    if (!input.season) {
-      errors.season = "se requiere una Estacion";
+      errors.duration = "Duration is required";
     }
     if (input.duration < 1 || input.duration > 24) {
-      errors.duration = "la duracion debe ser entre 1 a 24 horas";
+      errors.duration = "The duration must be between 1 to 24 hours";
+    }
+    if (!input.season) {
+      errors.season = "Season is required";
     }
     if (input.countries.length === 0) {
-      errors.countries = "debes eleguir al menos un pais";
+      errors.countries = "You must choose at least one country";
     }
     console.log(errors);
     return errors;
